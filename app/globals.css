@@ -1,0 +1,129 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.alarm{
+  max-width: 300px;
+  background-color: crimson;
+  color: white;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  padding: 15px;
+  height: 300px;
+  transition-duration: 0.3s;
+}
+
+.circle{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.circle span{
+  font-size: xx-large;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hotpink;
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.settings{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  gap: 5px;
+}
+
+.settings input
+,.starter{
+  height: 30px;
+  padding: 5px;
+  border-radius: 15px;
+  transition-duration: 0.3s;
+}
+
+.settings input{
+  width: 20%;
+  text-align: center;
+  border: none;
+}
+
+.starter:hover{
+  background-color: #ececec;
+  color: crimson;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.starter{
+  background-color: crimson;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+}
+
+/*##################*/
+
+.container{
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  transition-duration: 0.5s;
+  justify-content: center;
+}
+
+@keyframes showDiv {
+  0%{
+    transform: translateX(-50px);
+    opacity: 0;
+  }100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.container div{
+  animation: showDiv 0.5s 1;
+}
+
+.new-alarm{
+  margin: auto;
+  background-color: #eee;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  color: rgb(66, 63, 63);
+  font-size: xx-large;
+}
+
+.new-alarm:hover{
+  background-color: #ddd;
+}
+
+.control-panel{
+  background-color: #ececec;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: sticky;
+}
