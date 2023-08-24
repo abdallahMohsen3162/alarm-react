@@ -25,7 +25,7 @@ export default function Load() {
         sethours(0);
     }
 
-    const Timer = ( ) => {
+   const Timer = ( ) => {
         if(cur >= lmit || lmit == 0){
             console.log("end");
             ended();
@@ -43,7 +43,7 @@ export default function Load() {
             if(seconds <= 0 && cur < lmit){
                 setminutes((p) => p - 1);
                 if(minutes != 0){
-                    setSeconds(59);
+                    setSeconds(60);
                 }
                 else if(minutes == 0 && hours > 0)
                 {   
