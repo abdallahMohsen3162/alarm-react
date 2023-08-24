@@ -74,7 +74,7 @@ export default function Load() {
 
     useEffect(()=>{
         
-        timer = setInterval(Timer, 100);
+        timer = setInterval(Timer, 1000);
         return () => {
             clearInterval(timer);
         }   
