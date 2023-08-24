@@ -20,6 +20,9 @@ export default function Load() {
     const ended = () => {    
         setcur(0);
         setlmit(0);
+        setSeconds(0);
+        setminutes(0);
+        sethours(0);
     }
 
     const Timer = ( ) => {
@@ -36,18 +39,18 @@ export default function Load() {
         }
         if(lmit > cur){
             setcur((p)=>((p+1)));
-            setSeconds((p) => p - 1);
+            
             if(seconds <= 0 && cur < lmit){
                 setminutes((p) => p - 1);
                 if(minutes != 0){
                     setSeconds(59);
                 }
-                else if(minutes <= 0 && hours > 0)
+                else if(minutes == 0 && hours > 0)
                 {   
                     sethours((p) => p - 1);
                     setminutes(60);
                 }   
-            }
+            }setSeconds((p) => Math.max(0, p - 1));
         }
     }
     
@@ -89,7 +92,7 @@ export default function Load() {
         <div className="alarm">
             <div className="circle" style={
                 {
-                    background:`conic-gradient(hotpink ${(lmit == 0) ? 0 : Math.floor(360*(cur/lmit))}deg, white 3deg)`
+                    background:`conic-gradient(hotpink ${(lmit == 0) ? 0 : Math.floor(360*(cur/lmit))}deg, white 0deg)`
                 }
             }>
                 <span>
