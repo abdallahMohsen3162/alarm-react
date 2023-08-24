@@ -7,6 +7,14 @@ export default function Load() {
     const ref1 = useRef<HTMLInputElement>(null);
     const ref2 = useRef<HTMLInputElement>(null);
     const ref3 = useRef<HTMLInputElement>(null);
+
+
+
+
+    const [seconds, setSeconds] = useState(0);
+    const [minutes, setminutes] = useState(0);
+    const [hours, sethours] = useState(0);
+
     let timer: any;
 
     const ended = () => {    
@@ -26,8 +34,17 @@ export default function Load() {
         if(cur >= lmit || lmit == 0){ 
             ended();
         }
-        if(lmit > cur)
+        if(lmit > cur){
             setcur((p)=>((p+1)));
+            setSeconds((p) => p - 1);
+            if(seconds == 0){
+                setSeconds(59);
+                setminutes((p) => p-1);
+                if(minutes == 0){
+                    sethours((p) => p - 1);
+                }
+            }
+        }
     }
     
     function setAgain(){
@@ -49,12 +66,15 @@ export default function Load() {
         console.log(lmit);
         setcur(0);
         setlmit(x*3600 + y*60 + z);
+        sethours(x);
+        setminutes(y);
+        setSeconds(z);
 
     }   
 
     useEffect(()=>{
         
-        timer = setInterval(Timer, 1000);
+        timer = setInterval(Timer, 100);
         return () => {
             clearInterval(timer);
         }   
@@ -69,9 +89,7 @@ export default function Load() {
                 }
             }>
                 <span>
-                    {
-                        cur
-                    }
+                    {  hours  }:{minutes}:{seconds}
                 </span>
             </div>
 
