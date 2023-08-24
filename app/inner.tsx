@@ -40,7 +40,7 @@ export default function Load() {
             if(seconds <= 0 && cur < lmit){
                 setminutes((p) => p - 1);
                 if(minutes != 0){
-                    setSeconds(60);
+                    setSeconds(59);
                 }
                 else if(minutes <= 0 && hours > 0)
                 {   
